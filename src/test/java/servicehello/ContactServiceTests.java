@@ -37,6 +37,7 @@ public class ContactServiceTests {
 
     @Test
     public void shouldRetrieveContacts() throws Exception {
+
         List<Contact> contactList = this.contactService.retrieveContacts(10, 1, "");
         Contact contact = contactList.get(0);
         assertThat(contact.getId()).isEqualTo(1);
