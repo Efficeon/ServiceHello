@@ -3,14 +3,10 @@ script: mvn clean verify
 jdk:
   - oraclejdk8
 
-before_script:
-    - "mysql -e 'create database database_contact;'"
-    - "mysql -e 'create table database_contact.contacts (id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, name VARCHAR(100));'"
-    - "mysql -e 'insert into database_contact.contacts (name) VALUES (\"Anton\");'"
-
+services:
+  - mysql
+before_install:
+- mysql -e "create database IF NOT EXISTS database_contact;" -uroot
+- mysql -e "create table hello.contacts(id int(64) AUTO_INCREMENT,name varchar(50)  ,PRIMARY KEY(id));" -uroot
 script: mvn install
 
-after_failure:
-    - "mysql -e 'show databases;'"
-    - "cat ./config/database.yml"
-    - "bundle exec rake --version"
