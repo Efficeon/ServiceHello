@@ -8,7 +8,9 @@ Database will be created automatically.
 
 ## CI
 
-SEE https://travis-ci.org/efficeon/ServiceHello ![My image](https://travis-ci.org/efficeon/ServiceHello.svg?branch=master)
+Travis
+
+[![Build Status](https://travis-ci.org/Efficeon/ServiceHello.svg?branch=master)](https://travis-ci.org/Efficeon/ServiceHello)
 
 ## 1. Start without Vagrant
 
