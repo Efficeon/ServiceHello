@@ -20,7 +20,7 @@ import java.util.Properties;
 @Configuration
 @EnableWebMvc
 @EnableTransactionManagement
-@ComponentScan({ "net.proselyte.resthello" })
+@ComponentScan({ "servicehello" })
 @PropertySource(value = { "classpath:application.properties" })
 public class AppConfig {
 
