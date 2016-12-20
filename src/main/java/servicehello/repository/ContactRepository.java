@@ -15,3 +15,4 @@ public interface ContactRepository {
 
     public List<Contact> retrieveContactsWithPaging(int pageSize, int pageNumber, String param);
 }
+

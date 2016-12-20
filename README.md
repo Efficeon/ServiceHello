@@ -1,36 +1,29 @@
-# RestHello
+# Test Task
 
-Technologies: Java 8, REST, Spring 4, Hibernate 4, SLF4J.
+Технологии: Java 8, REST, Spring 4, Hibernate 4, SLF4J.
 
-Database: MySQL
-
-Database will be created automatically.
-
-## CI
+База данных: MySQL (создается автоматически).
 
 Travis
-
 [![Build Status](https://travis-ci.org/Efficeon/ServiceHello.svg?branch=master)](https://travis-ci.org/Efficeon/ServiceHello)
 
-## 1. Start without Vagrant
+## 1. Запуск приложения
 
 mvn tomcat7:run
 
-URL for test:
+Для тестирования использовать:
 
 http://127.0.0.1:8080/hello/contacts?nameFilter=^B.*$
 
-and
+и
 
 http://127.0.0.1:8080/hello/contacts?nameFilter=^.*[il].*$
 
-## 2. Start using Vagrant
+## 2. Запуск в виртуальной среде Vagrant
 
 vagrant up
 
 vagrant ssh
-
-cd /vagrant/
 
 mvn tomcat7:run
 
