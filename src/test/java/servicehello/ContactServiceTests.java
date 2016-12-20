@@ -25,7 +25,7 @@ import java.util.List;
 @WebAppConfiguration
 public class ContactServiceTests {
     @Autowired
-    private ContactService contactService = new ContactServiceImpl();
+    private ContactService contactService;
 
     @Test
     public void shouldGetFilteredContacts() throws Exception {
