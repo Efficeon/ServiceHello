@@ -26,16 +26,16 @@ public class ContactRepositoryImpl implements ContactRepository {
 
     @Override
     @SuppressWarnings("unchecked")
-    public List<Contact> getFilteredContacts(String param) {
-        Pattern pattern = Pattern.compile(param);
+    public List<Contact> getFilteredContacts(String parameter) {
+        Pattern pattern = Pattern.compile(parameter);
         List<Contact> contacts = new LinkedList<Contact>();
 
         StatelessSession session = this.sessionFactory.openStatelessSession();
 
         ScrollableResults contactCursor = session.createQuery("from Contact").scroll(ScrollMode.FORWARD_ONLY);
 
-        logger.info("Getting contacts that meet pattern: " + param + "...");
-        long start = System.currentTimeMillis();
+        logger.info("Getting contactsn: " + parameter + "...");
+
         while (contactCursor.next()) {
             Contact currentContact = (Contact) contactCursor.get(0);
             Matcher m = pattern.matcher(currentContact.getName());
@@ -43,11 +43,6 @@ public class ContactRepositoryImpl implements ContactRepository {
                 contacts.add(currentContact);
             }
         }
-        long end = System.currentTimeMillis();
-        long timeElapsed = end - start;
-
-        logger.info(timeElapsed + " ms elapsed for retrieving and processing data.");
-
         contactCursor.close();
         session.close();
 
@@ -60,7 +55,7 @@ public class ContactRepositoryImpl implements ContactRepository {
     /**
      * Methods for paging
      */
-    public List<Contact> retrieveContactsWithPaging(int pageSize, int pageNumber, String param) {
+    public List<Contact> retrieveContactsWithPaging(int pageSize, int pageNumber, String parameter) {
         Session session = this.sessionFactory.getCurrentSession();
         List<Contact> contacts = null;
 
@@ -69,7 +64,7 @@ public class ContactRepositoryImpl implements ContactRepository {
         query.setMaxResults(pageSize);
         contacts = query.list();
 
-        return filterContacts(contacts, param);
+        return filterContacts(contacts, parameter);
     }
 
     private LinkedList<Contact> filterContacts(List<Contact> allContacts, String param) {

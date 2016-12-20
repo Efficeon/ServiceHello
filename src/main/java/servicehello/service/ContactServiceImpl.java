@@ -21,14 +21,14 @@ public class ContactServiceImpl implements ContactService {
 
     @Override
     @Transactional
-    public List<Contact> getFilteredContacts(String param) {
-        return contactRepository.getFilteredContacts(param);
+    public List<Contact> getFilteredContacts(String parameter) {
+        return contactRepository.getFilteredContacts(parameter);
     }
 
     @Override
     @Transactional
-    public List<Contact> retrieveContacts(int pageSize, int pageNumber, String param) {
-        return contactRepository.retrieveContactsWithPaging(pageSize, pageNumber, param);
+    public List<Contact> retrieveContacts(int pageSize, int pageNumber, String parameter) {
+        return contactRepository.retrieveContactsWithPaging(pageSize, pageNumber, parameter);
     }
 
 }

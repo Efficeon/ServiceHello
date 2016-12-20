@@ -11,8 +11,8 @@ import java.util.List;
  */
 public interface ContactRepository {
 
-    List<Contact> getFilteredContacts(String param);
+    List<Contact> getFilteredContacts(String parameter);
 
-    public List<Contact> retrieveContactsWithPaging(int pageSize, int pageNumber, String param);
+    public List<Contact> retrieveContactsWithPaging(int pageSize, int pageNumber, String parameter);
 }
 

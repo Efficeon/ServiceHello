@@ -9,7 +9,7 @@ import java.util.List;
  * @author Leonid Dubravsky
  */
 public interface ContactService {
-    List<Contact> getFilteredContacts(String param);
+    List<Contact> getFilteredContacts(String parameter);
 
-    public List<Contact> retrieveContacts(int pageSize, int pageNumber, String param);
+    public List<Contact> retrieveContacts(int pageSize, int pageNumber, String parameter);
 }
