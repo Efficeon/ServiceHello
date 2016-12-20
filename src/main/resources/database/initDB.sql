@@ -8,10 +8,3 @@ CREATE TABLE IF NOT EXISTS contacts (
   name VARCHAR(100) NOT NULL,
   PRIMARY KEY (id)
 );
-
-
-CREATE TABLE public.contacts
-(
-    id SERIAL NOT NULL AUTO_INCREMENT,
-    name VARCHAR(100) NOT NULL
-);
