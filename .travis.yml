@@ -7,6 +7,6 @@ services:
   - mysql
 before_install:
 - mysql -e "create database IF NOT EXISTS database_contact;" -uroot
-- mysql -e "create table hello.contacts(id int(64) AUTO_INCREMENT,name varchar(50)  ,PRIMARY KEY(id));" -uroot
+- mysql -e "create table database_contact.contacts(id int(64) AUTO_INCREMENT,name varchar(50)  ,PRIMARY KEY(id));" -uroot
 script: mvn install
 
