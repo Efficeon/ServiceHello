@@ -1,7 +1,7 @@
-CREATE DATABASE IF NOT EXISTS database_contact;
-GRANT ALL PRIVILEGES on database_contact to root@localhost identified by 'root';
+CREATE DATABASE IF NOT EXISTS contact_manager;
+GRANT ALL PRIVILEGES on contact_manager to root@localhost identified by 'root';
 
-USE database_contact;
+USE contact_manager;
 
 CREATE TABLE IF NOT EXISTS contacts (
   id  BIGINT(8) NOT NULL AUTO_INCREMENT,
