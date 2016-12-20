@@ -13,7 +13,7 @@ import java.util.regex.Pattern;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
-public class RegExpTests {
+public class RegularExpressionsTests {
 
     public static Contact FirstTestContact = null;
     public static Contact SecondTestContact = null;

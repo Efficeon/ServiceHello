@@ -34,7 +34,7 @@ public class ContactRepositoryImpl implements ContactRepository {
 
         ScrollableResults contactCursor = session.createQuery("from Contact").scroll(ScrollMode.FORWARD_ONLY);
 
-        logger.info("Getting contactsn: " + parameter + "...");
+        logger.info("Getting contacts: " + parameter + "...");
 
         while (contactCursor.next()) {
             Contact currentContact = (Contact) contactCursor.get(0);
@@ -69,14 +69,14 @@ public class ContactRepositoryImpl implements ContactRepository {
 
     private LinkedList<Contact> filterContacts(List<Contact> allContacts, String param) {
 
-        Pattern p = Pattern.compile(param);
+        Pattern pattern = Pattern.compile(param);
         LinkedList<Contact> sortedContacts = new LinkedList<Contact>(allContacts);
 
-        Iterator<Contact> itr = sortedContacts.iterator();
-        while (itr.hasNext()) {
-            Contact currentContact = itr.next();
-            Matcher m = p.matcher(currentContact.getName());
-            if (m.matches()) itr.remove();
+        Iterator<Contact> contactIterator = sortedContacts.iterator();
+        while (contactIterator.hasNext()) {
+            Contact currentContact = contactIterator.next();
+            Matcher matcher = pattern.matcher(currentContact.getName());
+            if (matcher.matches()) contactIterator.remove();
         }
 
         return sortedContacts;
