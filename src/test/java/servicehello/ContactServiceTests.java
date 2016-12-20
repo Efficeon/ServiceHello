@@ -32,7 +32,7 @@ public class ContactServiceTests {
         List<Contact> contactList = this.contactService.getFilteredContacts("");
         Contact contact = contactList.get(0);
         assertThat(contact.getId()).isEqualTo(1);
-        assertThat(contact.getName()).isEqualTo("Albert");
+        assertThat(contact.getName()).isEqualTo("Anton");
     }
 
     @Test
@@ -40,6 +40,6 @@ public class ContactServiceTests {
         List<Contact> contactList = this.contactService.retrieveContacts(10, 1, "");
         Contact contact = contactList.get(0);
         assertThat(contact.getId()).isEqualTo(1);
-        assertThat(contact.getName()).isEqualTo("Albert");
+        assertThat(contact.getName()).isEqualTo("Anton");
     }
 }
