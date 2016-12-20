@@ -5,4 +5,5 @@ test:
   database: database_contact
   pool: 5
   username: root
+  password:
   shost: localhost
